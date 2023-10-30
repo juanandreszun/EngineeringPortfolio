@@ -1,0 +1,94 @@
+ body {
+    background-color: black; 
+ }
+ 
+h1 {
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+.container {
+    display: flex;
+}
+        .myDiv {
+          /* background-color: lightblue;     */
+          text-align: center;
+          width: 50%; 
+        }
+
+        .myDiv2 {
+          /* background-color: lightblue;     */
+          text-align: left;
+          width: 25%; 
+        }
+
+
+.container3 {
+    display: flex;
+    width: 90%;
+    padding-left: 5%;
+}
+
+.myDivCAD {
+    text-align: center;
+    width: 50%;
+}
+
+#ChassisText {
+    padding: 15px;
+    font-size: 25px;
+}
+
+#BiplaneText {
+    padding: 15px;
+    font-size: 25px;
+}
+
+#ScissorJack {
+    padding: 50px;
+    font-size: 25px;
+}
+
+#TeslaValve {
+    padding:25px;
+    font-size: 25px
+}
+
+#fsaeCFD {
+    padding: 25px;
+    font-size:25px;
+}
+
+#fsaeChassis {
+    padding: 50px;
+    font-size: 25px;
+}
+
+#HeatTransfer {
+    padding: 25px;
+    font-size: 25px;
+}
+
+#ShaftCollars {
+    padding: 25px;
+    font-size: 25px;
+}
+
+#FSAEPedal {
+    padding: 25px;
+    font-size: 25px;
+}
+
+.container2 {
+    display: flex;
+    width: 80%;
+    padding-left: 10%;;
+}
+
