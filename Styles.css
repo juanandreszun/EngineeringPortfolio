@@ -41,6 +41,14 @@ p {
     width: 50%;
 }
 
+.container2 {
+    display: flex;
+    width: 80%;
+    padding-left: 10%;;
+}
+
+/* Text CSS ID's*/
+
 #ChassisText {
     padding: 15px;
     font-size: 25px;
@@ -86,9 +94,9 @@ p {
     font-size: 25px;
 }
 
-.container2 {
-    display: flex;
-    width: 80%;
-    padding-left: 10%;;
+#MachineDesign {
+    padding: 15px;
+    font-size: 20px
 }
+
 
