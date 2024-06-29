@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan Zuniga's Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    
+  <style>
+    .feature-icon {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 0.75rem;
+    }
+
+
+    @media screen and (max-width: 800px) {
+  /* CSS rules for screens narrower than 600px */
+
+  p {
+    font-size: x-small;
+  }
+
+  .card {
+  width: 75%;
+  }
+}
+
+  </style>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://drive.google.com/file/d/1_n2nPeVQZs2APde1yBxSuxEx4QXrYwNd/view?usp=sharing">Resume</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Class Work
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/Class Work/SeniorDesign.html">Pitch Perfect</a></li>
+              <li><a class="dropdown-item" href="/Class Work/4BarLinkage.html">4 Bar Linkage </a></li>
+              <li><a class="dropdown-item" href="/Class Work/RoboticsStudio.html">Robotics Studio</a></li>
+              <li><a class="dropdown-item" href="/Class Work/ArduinoLabandJack.html">Arduino Lab / Scissor Jack</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Digital Manufacturing 
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/Embroidery.html">Embroidery</a></li>
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/FoodPrinting.html">Food Printing</a></li>
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/LampshadeLattice.html">Lampshade Lattice</a></li>
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/LaserCut.html">Laser Cutting</a></li>
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/Topology.html">Topology Optimization</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              FSAE
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/FSAEPages/AeroAnalysis.html">Aerodynamics Analysis</a></li>
+              <li><a class="dropdown-item" href="/FSAEPages/Chassis.html">EV Chassis Design</a></li>
+              <li><a class="dropdown-item" href="/FSAEPages/FullCar.html">Full Car CAD</a></li>
+              <li><a class="dropdown-item" href="/FSAEPages/Manufacturing.html">Manufacturing Projects</a></li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container" style="text-align: center;">
+      <h1 class="display-3">Project Goal</h1>
+      <p class="lead">Write software to create a custom G-Code file for food printing on a 3 axis extruder</p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 33%; margin: 0 auto;">
+    <img class="card-img-top" src="/images/DigitalManufacturing/Food1.png" alt="Food1">
+    <div class="card-body">
+      <h5 class="card-title">Step 1</h5>
+      <p class="card-text">Use some basic G-Code commands to get an understanding for feedrate, absolute versus relative coordinates, and other commands. </p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 33%; margin: 0 auto;">
+    <img class="card-img-top" src="/images/DigitalManufacturing/Food2.png" alt="Food2">
+    <div class="card-body">
+      <h5 class="card-title">Step 2</h5>
+      <p class="card-text">Write functions to create your shape of choice. Here we are calling the function triangles, with custom parameters.</p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 33%; margin: 0 auto;">
+    <img class="card-img-top" src="/images/DigitalManufacturing/Food3.png" alt="Food3">
+    <div class="card-body">
+      <h5 class="card-title">Step 3</h5>
+      <p class="card-text">Create your custom food material, we used sweet potatos and potatos with cream for our mixture.</p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 33%; margin: 0 auto;">
+    <img class="card-img-top" src="/images/DigitalManufacturing/Food4.png" alt="Food4">
+    <div class="card-body">
+      <h5 class="card-title">Step 4</h5>
+      <p class="card-text">Test your code on a G-Code Simulator to see if it is shifting over and moving up as expected</p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 33%; margin: 0 auto;">
+    <img class="card-img-top" src="/images/DigitalManufacturing/Food5.gif" alt="Food5">
+    <div class="card-body">
+      <h5 class="card-title">Step 5</h5>
+      <p class="card-text">Load your food into the nozzles and start your food print! <a title="YouTube, Public domain, via Wikimedia Commons" href="https://www.youtube.com/watch?v=qtV8ndrGw04&t=242s"><img width="32" alt="Youtube logo" src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"></a></p>
+    </div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

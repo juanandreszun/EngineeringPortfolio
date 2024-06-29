@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan Zuniga's Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    
+  <style>
+    .feature-icon {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 0.75rem;
+    }
+
+    .card {
+      width: 30%;
+    }
+
+    @media screen and (max-width: 800px) {
+  /* CSS rules for screens narrower than 600px */
+  p {
+    font-size: smaller;
+  }
+
+  .card {
+  width: 50%;
+  }
+}
+  </style>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://drive.google.com/file/d/1_n2nPeVQZs2APde1yBxSuxEx4QXrYwNd/view?usp=sharing">Resume</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Class Work
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/Class Work/SeniorDesign.html">Pitch Perfect</a></li>
+              <li><a class="dropdown-item" href="/Class Work/4BarLinkage.html">4 Bar Linkage </a></li>
+              <li><a class="dropdown-item" href="/Class Work/RoboticsStudio.html">Robotics Studio</a></li>
+              <li><a class="dropdown-item" href="/Class Work/ArduinoLabandJack.html">Arduino Lab / Scissor Jack</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Digital Manufacturing 
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/Embroidery.html">Embroidery</a></li>
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/FoodPrinting.html">Food Printing</a></li>
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/LampshadeLattice.html">Lampshade Lattice</a></li>
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/LaserCut.html">Laser Cutting</a></li>
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/Topology.html">Topology Optimization</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              FSAE
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/FSAEPages/AeroAnalysis.html">Aerodynamics Analysis</a></li>
+              <li><a class="dropdown-item" href="/FSAEPages/Chassis.html">EV Chassis Design</a></li>
+              <li><a class="dropdown-item" href="/FSAEPages/FullCar.html">Full Car CAD</a></li>
+              <li><a class="dropdown-item" href="/FSAEPages/Manufacturing.html">Manufacturing Projects</a></li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container" style="text-align: center;">
+      <h1 class="display-3">Project Goal</h1>
+      <p class="lead">Redesign the aft part of an FSAE chassis to dynamically work as an EV car </p>
+    </div>
+  </div>
+
+  <div class="card" style=" margin: 0 auto;">
+    <img class="card-img-top" src="/images/FSAE/ChassisFSAE.jpg" alt="FSAE Chassis">
+    <div class="card-body">
+      <h5 class="card-title">Full CAD Model</h5>
+      <p class="card-text">In this project, I was given the unique challenge of only redesigning the rear half of an IC chassis to become an EV chassis. The fore part of the EV chassis has the same suspension pick up points, pedal box rail, and steering column as its previous IC chassis.</p>
+    </div>
+  </div>
+
+  <div class="card" style=" margin: 0 auto;">
+    <img class="card-img-top" src="/images/FSAE/Old Chassis.png" alt="Old Ev Chassis">
+    <div class="card-body">
+      <h5 class="card-title">Design Considerations</h5>
+      <p class="card-text">The drivetrain plates in our first EV chassis did not align properly. In addition, the toe link while kinematically correct, was in a position that looked subject to sheer stress that would snap it. For these reasons, my chassis had to accomodate both of these problems</p>
+    </div>
+  </div>
+
+  <div class="card" style=" margin: 0 auto;">
+    <img class="card-img-top" src="/images/FSAE/First Design.JPG" alt="First chassis">
+    <div class="card-body">
+      <h5 class="card-title">First Iteration </h5>
+      <p class="card-text">This CAD shows the first iteration of our new chassis. I was really struggling with suspension pick up points, and packaging the drivetrain so that parts where not to tightly toleranced.</p>
+    </div>
+  </div>
+
+  <div class="card" style=" margin: 0 auto;">
+    <img class="card-img-top" src="/images/FSAE/HangingDiff.JPG" alt="Second Chassis">
+    <div class="card-body">
+      <h5 class="card-title">Second Iteration </h5>
+      <p class="card-text">In this version, I switched to a hanging differential drivetrain plate that needed stronger tubes in the rear. In addition, I tried to create suspension pick up points at the nodes of the frame by making that square structure. In the future, the chassis designer and suspension person should be the same person to make the design as efficient as possible.</p>
+    </div>
+  </div>
+
+  <div class="card" style=" margin: 0 auto;">
+    <img class="card-img-top" src="/images/FSAE/FinalChassis.png" alt="Final Chassis">
+    <div class="card-body">
+      <h5 class="card-title">Final Chassis with Body </h5>
+      <p class="card-text">This was the final version of the chassis with the nosecone overlayed on it. In a future iteration, I would want to redesign the high voltage battery pack and inverter to be in a more simplified shape that is dictacted by the suspension points.</p>
+    </div>
+  </div>
+
+  <div class="card" style=" margin: 0 auto;">
+    <img class="card-img-top" src="/images/FSAE/Final Rear.jpg" alt="Tube Manufacturing and Welding">
+    <div class="card-body">
+      <h5 class="card-title">Tube Manufacturing and Welding </h5>
+      <p class="card-text">Columbia does not have the facilities to weld a full chassis in house. But, I spearheaded the creation of documentation for manufacturing of the chassis out of house. In addition, I created jigs and documents for how to make modifications to the chassis. This photo is the final rear for our EV chassis</p>
+    </div>
+  </div>
+
+  <div class="card" style=" margin: 0 auto;">
+    <img class="card-img-top" src="/images/FSAE//Torsional Moment.gif" alt="Tube Manufacturing and Welding">
+    <div class="card-body">
+      <h5 class="card-title">FEA</h5>
+      <p class="card-text"> In addition, I performed various FEA's to simulate cornering, braking, and various loads on the chassis. This gif shows the Torsional Moment of Inertia.</p>
+    </div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

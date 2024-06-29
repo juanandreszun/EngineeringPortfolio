@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan Zuniga's Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    
+  <style>
+    .feature-icon {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 0.75rem;
+    }
+
+
+    @media screen and (max-width: 800px) {
+  /* CSS rules for screens narrower than 600px */
+
+  p {
+    font-size: x-small;
+  }
+
+  .card {
+  width: 75%;
+  }
+}
+
+  </style>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://drive.google.com/file/d/1_n2nPeVQZs2APde1yBxSuxEx4QXrYwNd/view?usp=sharing">Resume</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Class Work
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/Class Work/SeniorDesign.html">Pitch Perfect</a></li>
+              <li><a class="dropdown-item" href="/Class Work/4BarLinkage.html">4 Bar Linkage </a></li>
+              <li><a class="dropdown-item" href="/Class Work/RoboticsStudio.html">Robotics Studio</a></li>
+              <li><a class="dropdown-item" href="/Class Work/ArduinoLabandJack.html">Arduino Lab / Scissor Jack</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Digital Manufacturing 
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/Embroidery.html">Embroidery</a></li>
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/FoodPrinting.html">Food Printing</a></li>
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/LampshadeLattice.html">Lampshade Lattice</a></li>
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/LaserCut.html">Laser Cutting</a></li>
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/Topology.html">Topology Optimization</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              FSAE
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/FSAEPages/AeroAnalysis.html">Aerodynamics Analysis</a></li>
+              <li><a class="dropdown-item" href="/FSAEPages/Chassis.html">EV Chassis Design</a></li>
+              <li><a class="dropdown-item" href="/FSAEPages/FullCar.html">Full Car CAD</a></li>
+              <li><a class="dropdown-item" href="/FSAEPages/Manufacturing.html">Manufacturing Projects</a></li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container" style="text-align: center;">
+      <h1 class="display-3">Project Goal</h1>
+      <p class="lead">Write code to create an SVG file for a Lasercutter</p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 33%; margin: 0 auto;">
+    <img class="card-img-top" src="/images/DigitalManufacturing/Laser1.png" alt="Laser1">
+    <div class="card-body">
+      <h5 class="card-title">Step 1</h5>
+      <p class="card-text"> Sketch out the dimensions you want for your part. In this project I made boxes.  </p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 33%; margin: 0 auto;">
+    <img class="card-img-top" src="/images/DigitalManufacturing/Laser2.png" alt="Laser2">
+    <div class="card-body">
+      <h5 class="card-title">Step 2</h5>
+      <p class="card-text">Write some code in Matlab that opens a file and puts user defined dimensions in an SVG readable format. </p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 33%; margin: 0 auto;">
+    <img class="card-img-top" src="/images/DigitalManufacturing/Laser3.png" alt="Laser3">
+    <div class="card-body">
+      <h5 class="card-title">Step 3</h5>
+      <p class="card-text"> Open your text file as an svg to see the shape that it traces. </p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 33%; margin: 0 auto;">
+    <img class="card-img-top" src="/images/DigitalManufacturing/Laser4.png" alt="Laser4">
+    <div class="card-body">
+      <h5 class="card-title">Step 4</h5>
+      <p class="card-text"> Import your svg into your lasercutter for lasercutting. </p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 33%; margin: 0 auto;">
+    <img class="card-img-top" src="/images/DigitalManufacturing/Laser5.png" alt="Laser5">
+    <div class="card-body">
+      <h5 class="card-title">Step 5</h5>
+      <p class="card-text"> Put your favorite parts in your newly formed boxes after adding screws to hold the panels together <a title="YouTube, Public domain, via Wikimedia Commons" href="https://www.youtube.com/watch?v=LLtJ6h7TJMA"><img width="32" alt="Youtube logo" src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"></a>. </p>
+    </div>
+  </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

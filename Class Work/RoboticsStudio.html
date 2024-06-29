@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan Zuniga's Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    
+  <style>
+    .feature-icon {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 0.75rem;
+    }
+
+    .card {
+      width: 25%;
+    }
+
+    @media screen and (max-width: 800px) {
+  /* CSS rules for screens narrower than 600px */
+  p {
+    font-size: smaller;
+  }
+
+  .card {
+  width: 50%;
+  }
+}
+  </style>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://drive.google.com/file/d/1_n2nPeVQZs2APde1yBxSuxEx4QXrYwNd/view?usp=sharing">Resume</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Class Work
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/Class Work/SeniorDesign.html">Pitch Perfect</a></li>
+              <li><a class="dropdown-item" href="/Class Work/4BarLinkage.html">4 Bar Linkage </a></li>
+              <li><a class="dropdown-item" href="/Class Work/RoboticsStudio.html">Robotics Studio</a></li>
+              <li><a class="dropdown-item" href="/Class Work/ArduinoLabandJack.html">Arduino Lab / Scissor Jack</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Digital Manufacturing 
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/Embroidery.html">Embroidery</a></li>
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/FoodPrinting.html">Food Printing</a></li>
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/LampshadeLattice.html">Lampshade Lattice</a></li>
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/LaserCut.html">Laser Cutting</a></li>
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/Topology.html">Topology Optimization</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              FSAE
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/FSAEPages/AeroAnalysis.html">Aerodynamics Analysis</a></li>
+              <li><a class="dropdown-item" href="/FSAEPages/Chassis.html">EV Chassis Design</a></li>
+              <li><a class="dropdown-item" href="/FSAEPages/FullCar.html">Full Car CAD</a></li>
+              <li><a class="dropdown-item" href="/FSAEPages/Manufacturing.html">Manufacturing Projects</a></li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container" style="text-align: center;">
+      <h1 class="display-3">Project Goal</h1>
+      <p class="lead">Create a BiPedal Robot that can walk, throw punches, and speak. This project is still a work in progress. </p>
+    </div>
+  </div>
+
+  <div class="card" style=" margin: 0 auto;">
+    <img class="card-img-top" src="/images/ClassWork/Robotics Studio/Sketch.png" alt="Sketch">
+    <div class="card-body">
+      <h5 class="card-title">Inital Sketches</h5>
+      <p class="card-text"> These were the inital sketchs of how the robot was intended to look. It is based off of the boxer from Wii Sports.</p>
+    </div>
+  </div>
+
+  <div class="card" style=" margin: 0 auto;">
+    <img class="card-img-top" src="/images/ClassWork/Robotics Studio/First CAD.png" alt="First CAD">
+    <div class="card-body">
+      <h5 class="card-title">First CAD model</h5>
+      <p class="card-text"> This was the first iteration of the CAD model of this project. It does not include all of the components just the general shape and size of the robot.</p>
+    </div>
+  </div>
+
+  <div class="card" style=" margin: 0 auto;">
+    <img class="card-img-top" src="/images/ClassWork/Robotics Studio/Exploded.png" alt="Exploded View">
+    <div class="card-body">
+      <h5 class="card-title">Exploded View of CAD</h5>
+      <p class="card-text">Here you can see each of the individual components of the robot. The Raspberry Pi, DC to DC converter, servo motors, battery, and PLA parts are included. </p>
+    </div>
+  </div>
+
+  <div class="card" style=" margin: 0 auto;">
+    <img class="card-img-top" src="/images/ClassWork/Robotics Studio/Working Leg.png" alt="Working Leg">
+    <div class="card-body">
+      <h5 class="card-title">First Leg Movement</h5>
+      <p class="card-text"> This photo shows the first test we ran to get our servo motors working. It doesn't look strictly like a leg, because we were testing various designs to see which could hold the servo motors the best.</p>
+    </div>
+  </div>
+
+  <div class="card" style=" margin: 0 auto;">
+    <img class="card-img-top" src="/images/ClassWork/Robotics Studio/Full Built.png" alt="Fully Built">
+    <div class="card-body">
+      <h5 class="card-title">Fully Built Version 1</h5>
+      <p class="card-text"> This was the first fully built version of our robot. It did not have the punching feature yet, but it had all the parts neccessary to walk.</p>
+    </div>
+  </div>
+
+  <div class="card" style=" margin: 0 auto;">
+    <img class="card-img-top" src="/images/ClassWork/Robotics Studio/WalkingRobot.png" alt="Walking Robot">
+    <div class="card-body">
+      <h5 class="card-title">Walking Robot </h5>
+      <p class="card-text"> This is a photo of one of the intermediate positions for our walking robot. Here is an accompaning video for the walking of the robot: 
+        <a title="YouTube, Public domain, via Wikimedia Commons" href="https://www.youtube.com/watch?v=N67RzOKYKho"><img width="32" alt="Youtube logo" src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"></a>
+      </p>
+    </div>
+  </div>
+
+  <div class="card" style=" margin: 0 auto;">
+    <img class="card-img-top" src="/images/ClassWork/Robotics Studio/FinalCAD.JPG" alt="FinalCAD">
+    <div class="card-body">
+      <h5 class="card-title">Final CAD with punching </h5>
+      <p class="card-text"> This is the final CAD model for this project. It has 10 servo motors, 2 solenoids, and a Raspberry Pi as the brains of the project. It has not been printed yet.</p>
+    </div>
+  </div>
+
+  <div class="card" style=" margin: 0 auto;">
+    <img class="card-img-top" src="/images/ClassWork/Robotics Studio/PyBullet.gif" alt="Pybullet">
+    <div class="card-body">
+      <h5 class="card-title">PyBullet Machine Learning</h5>
+      <p class="card-text"> The reason the above CAD has not been printed is because the model needs to learn to walk, as guess and check would be tedious.
+         So, I imported the model into a software called PyBullet, which uses a URDF file of the robot to simulate it in a flat environment. 
+        The GIF shown here is a random sort trying to find the combination of parameters for the robots servo motors that allow it to walk the farthest without falling over. 
+        A better method of doing this would be to write a Reinforcement Learning Algorthim but that is still in the works. </p>
+    </div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

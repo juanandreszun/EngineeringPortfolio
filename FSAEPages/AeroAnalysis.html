@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan Zuniga's Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    
+  <style>
+    .feature-icon {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 0.75rem;
+    }
+
+    .card {
+      width: 40%;
+    }
+
+    @media screen and (max-width: 800px) {
+  /* CSS rules for screens narrower than 600px */
+  p {
+    font-size: smaller;
+  }
+
+  .card {
+  width: 50%;
+  }
+}
+  </style>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://drive.google.com/file/d/1_n2nPeVQZs2APde1yBxSuxEx4QXrYwNd/view?usp=sharing">Resume</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Class Work
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/Class Work/SeniorDesign.html">Pitch Perfect</a></li>
+              <li><a class="dropdown-item" href="/Class Work/4BarLinkage.html">4 Bar Linkage </a></li>
+              <li><a class="dropdown-item" href="/Class Work/RoboticsStudio.html">Robotics Studio</a></li>
+              <li><a class="dropdown-item" href="/Class Work/ArduinoLabandJack.html">Arduino Lab / Scissor Jack</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Digital Manufacturing 
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/Embroidery.html">Embroidery</a></li>
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/FoodPrinting.html">Food Printing</a></li>
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/LampshadeLattice.html">Lampshade Lattice</a></li>
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/LaserCut.html">Laser Cutting</a></li>
+              <li><a class="dropdown-item" href="/DigitalManufacturingPages/Topology.html">Topology Optimization</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              FSAE
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/FSAEPages/AeroAnalysis.html">Aerodynamics Analysis</a></li>
+              <li><a class="dropdown-item" href="/FSAEPages/Chassis.html">EV Chassis Design</a></li>
+              <li><a class="dropdown-item" href="/FSAEPages/FullCar.html">Full Car CAD</a></li>
+              <li><a class="dropdown-item" href="/FSAEPages/Manufacturing.html">Manufacturing Projects</a></li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container" style="text-align: center;">
+      <h1 class="display-3">Project Goal</h1>
+      <p class="lead">Analyzing the effects of adding Downforce producing devices to Columbia's FSAE car. </p>
+    </div>
+  </div>
+
+  <div class="card" style=" margin: 0 auto;">
+    <img class="card-img-top" src="/images/FSAE/cfd6.png" alt="FSAE CFD Pathlines">
+    <div class="card-body">
+      <h5 class="card-title">Pathlines plot</h5>
+      <p class="card-text">In this project, I attempted to analyze the effects of adding downforce producing elements to an FSAE car. Shown here is a simplified version of Columbia's 2023 EV car.</p>
+    </div>
+  </div>
+
+  <div class="card" style=" margin: 0 auto;">
+    <img class="card-img-top" src="/images/FSAE/FSAE tire data.png" alt="Tire Data">
+    <div class="card-body">
+      <h5 class="card-title">Tire Data</h5>
+      <p class="card-text">The first step is to understand what effect increasing downforce in the Fz direction will have on Lateral Load Transfer in the Fy direction. This plot is taken from Milliken's RCVD book.</p>
+    </div>
+  </div>
+
+  <div class="card" style=" margin: 0 auto;">
+    <img class="card-img-top" src="/images/FSAE/MatlabTire.png" alt="Matlab Analyze">
+    <div class="card-body">
+      <h5 class="card-title">Matlab Analyze </h5>
+      <p class="card-text">In this code, I plotted various tire slip angles to understand their Fz versus Fy relationship. 
+        I used the assumption that the highest Fz to Fy ratio was the best and that was at a tire slip angle of 6. </p>
+    </div>
+  </div>
+
+
+  <div class="card" style=" margin: 0 auto;">
+    <img class="card-img-top" src="/images/FSAE/cfd1.png" alt="CFD Pressure">
+    <div class="card-body">
+      <h5 class="card-title">Pressure Values </h5>
+      <p class="card-text">Next, I imported a full FSAE car with downforce producing devices into Ansys Fluent. The photo here is of the pressure contours of each individual part from a 2D prespective. Note, I learned how to do this CFD analysis on my own, I found this tutorial from Ansys helpful: <a title="Ansys Logo" href="https://courses.ansys.com/index.php/courses/aerodynamics-of-an-fsae-car/"><img width="40" alt="Ansys logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e5/ANSYS_logo.png"></a> </p>
+    </div>
+  </div>
+
+  <div class="card" style=" margin: 0 auto;">
+    <img class="card-img-top" src="/images/FSAE/Results.png" alt="Hand Calcs">
+    <div class="card-body">
+      <h5 class="card-title">Hand Calculations, OptimumLap </h5>
+      <p class="card-text"> The following step was to run hand calculations to see if adding these downforce values to Columbia's FSAE car would show significant improved in lap times at each of the dynamic events. 
+        I used OptimumLaps pre-built FSAE tracks and previous competition scores to see if my results fell within a reasonable range of values. The yellow values are inregularities with the simulation and real world values. </p>
+    </div>
+  </div>
+
+  <div class="card" style=" margin: 0 auto;">
+    <img class="card-img-top" src="/images/FSAE/Lap.png" alt="Final Results">
+    <div class="card-body">
+      <h5 class="card-title">Final Results</h5>
+      <p class="card-text"> While this project had some major simplifications in terms of CAD model, analysis methods used, and software, it was a good step towards creating a frame work to understanding how to go about Aerodynamic Analysis. This plot shows that increasing downforce will speed up lap times. In future iterations, a more accurate CAD model, better simulation software, track testing, and wind tunnel testing would provide more accurate results.
+        A paper I wrote on this project is shown here: <a href="https://docs.google.com/document/d/1WUaw7UhSmtpxh8a9W7wFht_PhU8XCPXzk0zA4PPTpFE/edit?usp=sharing"> 📄</a> .
+      </p>
+    </div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
+
