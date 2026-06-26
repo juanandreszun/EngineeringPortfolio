@@ -1,0 +1,634 @@
+/* ================================================
+   styles.css — Juan Zuniga's Portfolio
+   ================================================
+   This file replaces Bootstrap with hand-written CSS.
+   Each section has comments teaching the underlying
+   CSS concept so you can understand why every rule
+   is written the way it is.
+   ================================================ */
+
+
+/* -----------------------------------------------
+   LESSON 1: THE CSS RESET & BOX MODEL
+
+   By default, browsers add their own padding and
+   margin to elements (e.g. <h1> has a top margin).
+   Resetting removes those surprises.
+
+   The Box Model:
+     Every element is a rectangle made of four layers:
+       1. content  — the actual text or image
+       2. padding  — space between content and border
+       3. border   — the visible edge of the element
+       4. margin   — space outside the border
+
+   box-sizing: border-box changes how width/height
+   are calculated. By default (content-box), width
+   only covers the content — padding and border are
+   ADDED on top. border-box includes padding and
+   border inside the declared width, which is almost
+   always what you want.
+   ----------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #212529;
+  line-height: 1.6;
+  background-color: #ffffff;
+}
+
+/* max-width: 100% prevents images from overflowing
+   their container. display: block removes the small
+   gap that appears below inline images. */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* -----------------------------------------------
+   LESSON 2: FLEXBOX — THE NAVBAR
+
+   Flexbox is a one-dimensional layout system.
+   You activate it on a CONTAINER (the parent element),
+   and it controls how the direct CHILDREN are arranged.
+
+   Key container properties:
+     display: flex         — activates flexbox
+     flex-direction: row   — children go left → right (default)
+     flex-direction: column — children go top → bottom
+     justify-content       — spacing along the MAIN axis
+                             (horizontal when row, vertical when column)
+     align-items           — alignment on the CROSS axis
+                             (vertical when row, horizontal when column)
+     gap                   — space between children
+     flex-wrap: wrap       — allow children to wrap to the next line
+
+   Key child (flex item) properties:
+     flex-grow: 1          — item expands to fill available space
+     flex-shrink: 0        — item will not shrink below its base size
+     align-self            — override the parent's align-items for one item
+   ----------------------------------------------- */
+
+/* The navbar is a flex CONTAINER.
+   Its two direct children (nav-toggle button and
+   nav-links list) are flex ITEMS laid out in a row.
+
+   justify-content: space-between pushes the two
+   children to opposite ends of the navbar.
+   align-items: center vertically centers them.
+   flex-wrap: wrap lets the nav-links drop to a
+   second line on mobile when toggled open. */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  position: sticky; /* stays at top while scrolling */
+  top: 0;
+  z-index: 100;     /* sits above page content */
+}
+
+/* nav-links is itself a flex CONTAINER.
+   Its children (the <li> items) become flex items
+   arranged in a horizontal row with gaps between them. */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.nav-links > li > a {
+  display: block;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.nav-links > li > a:hover {
+  background-color: #e9ecef;
+}
+
+/* stopped reading -4/13/2026 */
+/* -----------------------------------------------
+   LESSON 3: POSITION — DROPDOWN MENUS
+
+   CSS has four main position values:
+
+   static   (default) — element is in normal document flow.
+   relative — element stays in flow, but you can use
+              top/right/bottom/left to nudge it. Most
+              importantly, it becomes an anchor for
+              absolutely positioned children.
+   absolute — element is removed from normal flow.
+              It positions itself relative to the
+              nearest ancestor with position: relative
+              (or absolute/fixed). Other elements
+              ignore its space.
+   fixed    — like absolute, but positions relative
+              to the browser viewport, not the page.
+   sticky   — stays in flow until a scroll threshold,
+              then "sticks" like fixed.
+
+   Dropdowns work by combining relative + absolute:
+     parent <li> → position: relative  (the anchor)
+     child <ul>  → position: absolute  (floats on top)
+   ----------------------------------------------- */
+
+/* The parent <li> becomes the anchor.
+   The dropdown menu positions itself relative to it. */
+.has-dropdown {
+  position: relative;
+}
+
+.has-dropdown > a {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* The dropdown sits directly below its parent <li>.
+   top: 100% = "start at the bottom edge of the parent".
+   It is hidden by default (display: none).
+   The .open class (toggled by JS) shows it. */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 0.4rem 0;
+  min-width: 200px;
+  list-style: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  display: none;  /* hidden until .open is added */
+  z-index: 200;
+}
+
+.has-dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.9rem;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f8f9fa;
+}
+
+/* The hamburger button — only shown on mobile */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 0.35rem 0.6rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+
+/* -----------------------------------------------
+   LESSON 4: FLEXBOX CENTERING — HERO SECTION
+
+   One of flexbox's most useful features is centering.
+
+   To center children both horizontally and vertically:
+     display: flex
+     justify-content: center   (center on main axis)
+     align-items: center       (center on cross axis)
+
+   For a vertical stack that is horizontally centered:
+     display: flex
+     flex-direction: column    (main axis is now vertical)
+     align-items: center       (center on the HORIZONTAL cross axis)
+
+   Note: text-align: center centers TEXT within each
+   child element — that's different from flex centering,
+   which positions elements within the container.
+   ----------------------------------------------- */
+.hero {
+  display: flex;
+  flex-direction: column;   /* stack children top → bottom */
+  align-items: center;      /* center each child horizontally */
+  text-align: center;       /* center text within each child */
+  padding: 4rem 1.5rem 3rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+/* max-width + margin: 0 auto is the classic CSS
+   pattern for a centered readable column.
+   max-width limits the width; auto margins split
+   the remaining space equally on both sides. */
+.hero-content {
+  max-width: 640px;
+  margin-bottom: 2rem;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  color: #495057;
+  margin-bottom: 1.5rem;
+}
+
+/* The button row is a flex container so buttons
+   sit side-by-side. flex-wrap: wrap lets them
+   stack when the screen is narrow. */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.hero-image {
+  max-width: 30%;
+  border: 1px solid #dee2e6;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  margin-top: 2rem;
+}
+
+
+/* -----------------------------------------------
+   LESSON 5: BUTTONS
+
+   display: inline-flex allows the button to remain
+   inline (doesn't force a line break) while also
+   letting us use flexbox properties to vertically
+   center any icon or text inside it.
+
+   Transitions animate property changes smoothly.
+   "all 0.15s ease" means: animate any changed
+   property over 0.15 seconds using an ease curve.
+   ----------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 2px solid transparent;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-dark {
+  background-color: #212529;
+  color: #ffffff;
+  border-color: #212529;
+}
+
+.btn-dark:hover {
+  background-color: #343a40;
+  border-color: #343a40;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-outline:hover {
+  background-color: #6c757d;
+  color: #ffffff;
+}
+
+
+/* -----------------------------------------------
+   LESSON 6: FLEXBOX WRAP — CARD GRID
+
+   flex-wrap: wrap is the key to a simple responsive
+   grid without complex media queries.
+
+   How it works:
+     - Cards have a fixed width (e.g. 300px)
+     - The flex container is as wide as the page
+     - Flex places as many cards per row as fit
+     - Cards that don't fit wrap to the next row
+     - justify-content: center keeps partial rows centered
+
+   This is simpler than CSS Grid for equal-size cards
+   and requires zero media queries to be responsive.
+   ----------------------------------------------- */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;          /* wrap to new rows when needed */
+  gap: 2rem;
+  justify-content: center;  /* center cards within each row */
+  padding: 2.5rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;           /* center the grid on the page */
+}
+
+/* For pages that show biography-style cards in a
+   single centered column (like About), we use a
+   column flex layout instead of a wrapping grid. */
+.card-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2.5rem 1.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.card-column .card {
+  width: 100%;              /* fill the column's width */
+}
+
+.card-column .card-img {
+  max-height: 280px;
+  object-fit: contain;      /* show full image, no cropping */
+  background: #f4f4f4;      /* fill letterbox areas if aspect ratio differs */
+}
+
+#spacex-img {
+  max-height: 420px;        /* larger than the default 280px for the other cards */
+}
+
+/* ─── Contact Form ───────────────────────────────────────────
+   A flex column stacks labels above inputs.
+   gap replaces margin between each field group.
+   ─────────────────────────────────────────────────────────── */
+.contact-section {
+  max-width: 720px;
+  margin: 1rem auto 4rem;
+  padding: 2rem;
+}
+
+.contact-section h2 {
+  margin-bottom: 1.2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.contact-form .btn {
+  align-self: flex-start;
+}
+
+
+/* -----------------------------------------------
+   LESSON 7: THE CARD COMPONENT
+
+   A card is itself a flex CONTAINER with
+   flex-direction: column, so the image stacks on
+   top of the body text.
+
+   flex-grow: 1 on .card-body makes the body expand
+   to fill whatever vertical space is left after the
+   image. This ensures equal-height cards in a row
+   have their text start at the same position.
+
+   overflow: hidden clips the image corners to match
+   the card's border-radius. Without it, the image
+   would poke out past the rounded corners.
+
+   object-fit: cover on the image fills its box
+   completely — cropping the image rather than
+   distorting it. Like "background-size: cover"
+   but for <img> elements.
+   ----------------------------------------------- */
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;          /* clip image to border-radius */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  background-color: #ffffff;
+}
+
+.card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.13);
+  transform: translateY(-2px); /* subtle lift on hover */
+}
+
+.card-img {
+  width: 100%;
+  height: auto;              /* natural height — no cropping */
+  display: block;
+}
+
+/* flex-grow: 1 makes the body fill remaining height */
+.card-body {
+  flex-grow: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #212529;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #495057;
+  line-height: 1.55;
+}
+
+/* YouTube icon images inside card text */
+.card-text img {
+  display: inline;
+  vertical-align: middle;
+}
+
+
+/* -----------------------------------------------
+   LESSON 8: THE JUMBOTRON (PAGE HEADER BLOCK)
+
+   This is a simple centered header block.
+   No flexbox needed — we just use:
+     text-align: center     to center the text
+     max-width + margin: 0 auto  to limit line length
+     padding                to add breathing room
+
+   The combination of max-width and margin: 0 auto
+   is the foundational CSS pattern for centered
+   readable content columns.
+   ----------------------------------------------- */
+.jumbotron {
+  padding: 3rem 1.5rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 0.5rem;
+}
+
+.jumbotron h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #212529;
+}
+
+.jumbotron .lead {
+  font-size: 1.1rem;
+  color: #495057;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+
+/* -----------------------------------------------
+   LESSON 9: MEDIA QUERIES — RESPONSIVE DESIGN
+
+   A @media rule applies styles only when a condition
+   is true. The most common use is max-width, which
+   targets screens NARROWER than a breakpoint:
+
+     @media screen and (max-width: 768px) { ... }
+
+   Think of it this way:
+     - Everything above this rule is your default layout
+       (designed for desktop, wider screens)
+     - The media query OVERRIDES specific rules for
+       smaller screens
+
+   The 768px breakpoint is a common choice — it covers
+   most phones and small tablets in portrait mode.
+
+   "Mobile-first" is an alternative approach where you
+   write mobile styles by default and use min-width
+   to override for larger screens. Both approaches work.
+   ----------------------------------------------- */
+@media screen and (max-width: 768px) {
+
+  /* Show the hamburger button on mobile */
+  .nav-toggle {
+    display: block;
+  }
+
+  /* Nav links are hidden by default on mobile.
+     When the hamburger is clicked, JS adds .nav-open
+     to the navbar, which makes this flex. */
+  .nav-links {
+    display: none;
+    flex-direction: column;   /* stack items vertically */
+    align-items: flex-start;
+    width: 100%;              /* take full row → forces wrap to new line */
+    gap: 0;
+    padding: 0.5rem 0 0.75rem;
+    border-top: 1px solid #dee2e6;
+  }
+
+  .navbar.nav-open .nav-links {
+    display: flex;            /* show when toggled */
+  }
+
+  .nav-links > li {
+    width: 100%;
+  }
+
+  .nav-links > li > a {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* On mobile, dropdowns use static positioning
+     so they push content down rather than floating */
+  .has-dropdown {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static;         /* back in normal flow on mobile */
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding-left: 1rem;
+    min-width: unset;
+    width: 100%;
+  }
+
+  /* Cards go nearly full-width on small screens.
+     vw = viewport width unit (100vw = full screen width) */
+  .card {
+    width: min(90vw, 400px); /* 90% of screen, but never wider than 400px */
+  }
+
+  .card-column .card {
+    width: 100%;
+  }
+
+  .hero-title {
+    font-size: 1.9rem;
+  }
+
+  .hero-image {
+    max-width: 85%;
+  }
+
+  .jumbotron h1 {
+    font-size: 1.75rem;
+  }
+}
