@@ -270,11 +270,11 @@ a {
 }
 
 .hero-image {
-  max-width: 30%;
+  max-width: 37.5%;
   border: 1px solid #dee2e6;
   border-radius: 0.75rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  margin-top: 2rem;
+  margin: 2rem auto 0;
 }
 
 
@@ -561,6 +561,41 @@ a {
    write mobile styles by default and use min-width
    to override for larger screens. Both approaches work.
    ----------------------------------------------- */
+/* -----------------------------------------------
+   LESSON 10: DATE NIGHT QUESTION FLOW
+
+   Only one .question-step is shown at a time —
+   JS toggles the .active class to swap questions.
+   Each step's buttons live in a nested .hero-buttons
+   div so the flex-row button layout never conflicts
+   with the block display used to show/hide the step.
+   ----------------------------------------------- */
+.question-step {
+  display: none;
+}
+
+.question-step.active {
+  display: block;
+}
+
+.final-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.date-photo {
+  width: 275px;
+  height: 275px;
+  object-fit: cover;
+  border: 1px solid #dee2e6;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+
 @media screen and (max-width: 768px) {
 
   /* Show the hamburger button on mobile */
@@ -626,6 +661,11 @@ a {
 
   .hero-image {
     max-width: 85%;
+  }
+
+  .date-photo {
+    width: 160px;
+    height: 160px;
   }
 
   .jumbotron h1 {

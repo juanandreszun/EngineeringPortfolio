@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan and Araya Friday Night Date</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: #fdeef3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hero">
+    <h3 class="hero-title">You have asked me to come up with a good idea for our date Friday.</h3>
+    <div class="hero-content">
+      <p>So, I came up with a couple but would like your help to be apart of the date selection process.
+        I have one date I hope you choose, lets see if we are like this:</p>
+      <img src="./images/FridayDate/BrainCellsLink.jpg" class="hero-image" alt="BrainCellsLink" loading="lazy">
+    </div>
+
+    <div id="q-start" class="question-step active">
+      <div class="hero-buttons">
+        <button type="button" class="btn btn-dark" data-next="q-american">American Food</button>
+        <button type="button" class="btn btn-dark" data-next="q-greek">Greek</button>
+        <button type="button" class="btn btn-dark" data-next="q-winebar">Wine Bar</button>
+      </div>
+    </div>
+
+    <div id="q-american" class="question-step">
+      <div class="hero-buttons">
+        <button type="button" class="btn btn-dark" data-next="q-beach">Beach</button>
+        <button type="button" class="btn btn-dark" data-next="q-city">City</button>
+      </div>
+    </div>
+
+    <div id="q-greek" class="question-step">
+      <div class="hero-buttons">
+        <button type="button" class="btn btn-dark" data-next="q-final">Drinks</button>
+        <button type="button" class="btn btn-dark" data-next="q-final">Walk</button>
+      </div>
+    </div>
+
+    <div id="q-winebar" class="question-step">
+      <div class="hero-buttons">
+        <button type="button" class="btn btn-dark" data-next="q-santamonica">Santa Monica</button>
+        <button type="button" class="btn btn-dark" data-next="q-abbotkinney">Abbot Kinney</button>
+      </div>
+    </div>
+
+    <div id="q-beach" class="question-step">
+      <div class="hero-buttons">
+        <button type="button" class="btn btn-dark" data-next="q-final">Movie Night</button>
+        <button type="button" class="btn btn-dark" data-next="q-final">Walk</button>
+      </div>
+    </div>
+
+    <div id="q-city" class="question-step">
+      <div class="hero-buttons">
+        <button type="button" class="btn btn-dark" data-next="q-final">Ice Cream</button>
+        <button type="button" class="btn btn-dark" data-next="q-final">Movie Night</button>
+      </div>
+    </div>
+
+    <div id="q-santamonica" class="question-step">
+      <div class="hero-buttons">
+        <button type="button" class="btn btn-dark" data-next="q-final">Pier</button>
+        <button type="button" class="btn btn-dark" data-next="q-final">Walk</button>
+      </div>
+    </div>
+
+    <div id="q-abbotkinney" class="question-step">
+      <div class="hero-buttons">
+        <button type="button" class="btn btn-dark" data-next="q-final">Venice Canals</button>
+        <button type="button" class="btn btn-dark" data-next="q-final">More Drinks</button>
+      </div>
+    </div>
+
+    <div id="q-final" class="question-step">
+      <p id="q-final-text">Perfect, it's a date! Can't wait for Friday.</p>
+      <div id="q-final-images" class="final-images"></div>
+      <p id="q-final-cta"></p>
+      <br>
+      <br>
+      <button type="button" id="restart-btn" class="btn btn-outline">Start Over</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const choices = [];
+      const imageBase = './images/FridayDate/';
+      const startStep = document.getElementById('q-start');
+      const finalText = document.getElementById('q-final-text');
+      const finalImages = document.getElementById('q-final-images');
+      const finalCta = document.getElementById('q-final-cta');
+      const defaultFinalText = finalText.textContent;
+      const defaultFinalCta = 'Send Juan a photo of what you choose!';
+      finalCta.textContent = defaultFinalCta;
+
+      const pathPhotos = {
+        'Wine Bar|Santa Monica|Walk': ['BodegaWineBar.webp', 'Walking.jpg'],
+        'Wine Bar|Santa Monica|Pier': ['BodegaWineBar.webp', 'SantaMonicaPier.webp'],
+        'Wine Bar|Abbot Kinney|Venice Canals': ['OnlyTheWildOnes.jpg', 'VeniceCanals.jpeg'],
+        'Wine Bar|Abbot Kinney|More Drinks': ['OnlyTheWildOnes.jpg', 'TheBrig.jpg'],
+        'Greek|Drinks': ['KassiVeniceBeach.jpg', 'GranBlanco.jpg'],
+        'Greek|Walk': ['KassiVeniceBeach.jpg', 'VeniceCanals.jpeg'],
+        'American Food|Beach|Movie Night': ['PlayaProvisions.webp', 'BeachMovieNight.jpg'],
+        'American Food|Beach|Walk': ['PlayaProvisions.webp', 'Walking.jpg'],
+        'American Food|City|Ice Cream': ['LaurelGrill.webp', 'IceCream.webp'],
+        'American Food|City|Movie Night': ['LaurelGrill.webp', 'CulverStepsMovie.jpg'],
+      };
+
+      const pathDescriptions = {
+        'Wine Bar|Santa Monica|Walk': 'Dinner at Bodega Wine Bar and a Walk in Santa Monica',
+        'Wine Bar|Santa Monica|Pier': 'Dinner at Bodega Wine Bar and a Walk on the Santa Monica Pier',
+        'Wine Bar|Abbot Kinney|Venice Canals': 'Dinner at Only the Wild Ones and a Walk through the Venice Canals',
+        'Wine Bar|Abbot Kinney|More Drinks': 'Dinner at Only the Wild Ones and Drinks at The Brig',
+        'Greek|Drinks': 'Dinner at Kassi Venice Beach and Drinks at Gran Blanco',
+        'Greek|Walk': 'Dinner at Kassi Venice Beach and a Walk through the Venice Canals',
+        'American Food|Beach|Movie Night': 'Dinner at Playa Provisions and a Movie Night on the Beach',
+        'American Food|Beach|Walk': 'Dinner at Playa Provisions and a Walk on the Beach',
+        'American Food|City|Ice Cream': 'Dinner at Laurel Grill and Ice Cream in the City',
+        'American Food|City|Movie Night': 'Dinner at Laurel Grill and a Movie Night at the Culver Steps',
+      };
+
+      document.querySelectorAll('.question-step button[data-next]').forEach(button => {
+        button.addEventListener('click', () => {
+          const currentStep = button.closest('.question-step');
+          const nextId = button.dataset.next;
+          const nextStep = document.getElementById(nextId);
+
+          choices.push(button.textContent.trim());
+
+          if (nextId === 'q-final') {
+            const pathKey = choices.join('|');
+            const description = pathDescriptions[pathKey];
+
+            finalText.textContent = description
+              ? `Perfect, it's a date! Here's the plan: ${description}.`
+              : `Perfect, it's a date! Here's the plan: ${choices.join(' -> ')}.`;
+            finalCta.textContent = defaultFinalCta;
+
+            finalImages.innerHTML = '';
+            const photos = pathPhotos[pathKey];
+            if (photos) {
+              photos.forEach(fileName => {
+                const img = document.createElement('img');
+                img.src = imageBase + fileName;
+                img.alt = fileName.replace(/\.[^.]+$/, '');
+                img.loading = 'lazy';
+                img.className = 'date-photo';
+                finalImages.appendChild(img);
+              });
+            }
+          }
+
+          currentStep.classList.remove('active');
+          nextStep.classList.add('active');
+        });
+      });
+
+      document.getElementById('restart-btn').addEventListener('click', () => {
+        choices.length = 0;
+        document.querySelectorAll('.question-step.active').forEach(step => step.classList.remove('active'));
+        finalText.textContent = defaultFinalText;
+        finalCta.textContent = defaultFinalCta;
+        finalImages.innerHTML = '';
+        startStep.classList.add('active');
+      });
+    });
+  </script>
+</body>
+
+</html>
